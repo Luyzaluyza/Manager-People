@@ -16,7 +16,7 @@ A API CRUD ManagerPeople foi desenvolvida para permitir o cadastro e gestão de 
 
 ## Instalação
 
-1. Clone este repositório: `git clone https://github.com/seu-usuario/api-cadastro-pessoas.git`
+1. Clone este repositório: `git clone https://github.com/Luyzaluyza/Manager-People.git`
 2. Navegue até o diretório do projeto.
 3. No arquivo `db_utils.py`, altere as configurações `user` e `password` para suas credenciais do MySQL.
 
@@ -83,4 +83,4 @@ A API valida o formato do CPF, o enum do estado civil e garante que todos os cam
 Se tiver alguma dúvida ou precisar de suporte técnico, sinta-se à vontade para entrar em contato comigo pelo e-mail luyza519@gmail.com.
 
 
---Luyza Brito
+--Luyza Brito <3
