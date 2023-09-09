@@ -126,17 +126,27 @@ def listar_pessoas():
     else:
         return jsonify({"message": "Erro ao conectar ao banco de dados"}), 500
     
+
 @app.route('/pessoa/<string:cpf>', methods=['DELETE'])
 def apagar_pessoa(cpf):
-    conn = conectar_banco()
-    if conn is not None:
-        cursor = conn.cursor()
-        cursor.execute("DELETE FROM pessoas WHERE cpf = %s", (cpf,))
-        conn.commit()
-        conn.close()
-        return jsonify({"message": "Pessoa apagada com sucesso"}), 200
-    else:
-        return jsonify({"message": "Erro ao conectar ao banco de dados"}), 500
+    try:
+        conn = conectar_banco()
+        if conn is not None:
+            cursor = conn.cursor()
+            cursor.execute("DELETE FROM pessoas WHERE cpf = %s", (cpf,))
+            affected_rows = cursor.rowcount 
+            conn.commit()
+            conn.close()
+
+            if affected_rows == 0:
+                return jsonify({"message": "Dados não encontrados."}), 404
+            else:
+                return jsonify({"message": "Pessoa apagada com sucesso"}), 200
+        else:
+            return jsonify({"message": "Erro ao conectar ao banco de dados"}), 500
+    except Exception as e:
+        return jsonify({"message": f"Erro durante a exclusão: {str(e)}"}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True)
