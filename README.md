@@ -1,6 +1,7 @@
 # API CRUD ManagerPeople
 
-Essa é uma API simples para a vaga de desenvolvedora back-end, um CRUD para gestão de pessoas.
+Essa é uma API simples usando Python, Mysql e Flask 
+Um CRUD para gestão de pessoas.
 
 ## Descrição
 
@@ -83,4 +84,4 @@ A API valida o formato do CPF, o enum do estado civil e garante que todos os cam
 Se tiver alguma dúvida ou precisar de suporte técnico, sinta-se à vontade para entrar em contato comigo pelo e-mail luyza519@gmail.com.
 
 
---Luyza Brito <3
+--Lu <3
